@@ -13,6 +13,7 @@ steps:
 - script: |
       echo $(System.HostType)
       echo $(System.JobName)
+      echo $(System.ServerType)
 #- task: CmdLine@2
 #  inputs:
 #    script: 'pod init'
