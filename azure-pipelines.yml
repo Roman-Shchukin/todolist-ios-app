@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: |
-      echo $[System.JobId]
+      echo $System.JobId
 #- task: CmdLine@2
 #  inputs:
 #    script: 'pod init'
