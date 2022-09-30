@@ -12,6 +12,7 @@ pool:
 steps:
 - script: |
       echo $(System.HostType)
+      echo $(System.JobName)
 #- task: CmdLine@2
 #  inputs:
 #    script: 'pod init'
