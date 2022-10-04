@@ -14,6 +14,8 @@ steps:
       echo $(System.HostType)
       echo $(System.JobName)
       echo $(System.ServerType)
+      echo $(Agent.Id)
+#      echo "##vso[task.getvariable variable=ACCESS_TOKEN;isOutput=true]message"
 #- task: CmdLine@2
 #  inputs:
 #    script: 'pod init'
