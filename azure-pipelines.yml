@@ -14,8 +14,8 @@ steps:
       echo $(System.HostType)
       echo $(System.JobName)
       echo $(System.ServerType)
-      echo $(Agent.Id)
-      echo "##vso[task.getvariable variable=Build_BuildId;]"
+      echo $(Agent.ServicePortPrefix)
+#      echo "##vso[task.getvariable variable=Build_BuildId;]"
 #- task: CmdLine@2
 #  inputs:
 #    script: 'pod init'
