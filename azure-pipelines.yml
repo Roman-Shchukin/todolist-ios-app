@@ -14,7 +14,7 @@ steps:
       echo $(System.HostType)
       echo $(System.JobName)
       echo $(System.ServerType)
-      echo $(Agent.JobName)
+      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
 #- task: CmdLine@2
 #  inputs:
