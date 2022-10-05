@@ -7,7 +7,7 @@ trigger:
 - master
 
 #pool: Default
-pool: Azure Piplines
+pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 
 steps:
