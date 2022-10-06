@@ -19,7 +19,7 @@ steps:
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
 - task: CmdLine@2
   inputs:
-    script: 'dir'
+    script: dir
 #- task: CocoaPods@0
 #  inputs:
 #    forceRepoUpdate: false
