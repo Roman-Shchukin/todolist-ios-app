@@ -12,10 +12,7 @@ pool: Default
 
 steps:
 - script: |
-      echo $(System.HostType)
-      echo $(System.JobName)
-      echo $(System.ServerType)
-      echo $(Agent.CloudId)
+      dir
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
 #- task: CmdLine@2
 #  inputs:
