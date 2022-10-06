@@ -20,7 +20,11 @@ steps:
 
 - task: CmdLine@2
   inputs:
-    script: call dir
+    script: mkdir test
+- task: CopyFiles@2
+  inputs:
+    Contents: '**'
+    TargetFolder: 'test'
 #- task: CocoaPods@0
 #  inputs:
 #    forceRepoUpdate: false
