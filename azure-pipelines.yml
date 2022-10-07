@@ -7,8 +7,9 @@ trigger:
 - master
 
 #pool: Default
-pool: Azure Pipelines
+pool: #Azure Pipelines
 #  vmImage: 'macos-latest'
+   vmImage: 'ubuntu-latest'
 
 steps:
 #- script: |
