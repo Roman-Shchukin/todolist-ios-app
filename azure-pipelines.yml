@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool: Default
-#pool: Azure Pipelines
+#pool: Default
+pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 
 steps:
@@ -17,14 +17,16 @@ steps:
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
-
-- task: CmdLine@2
+- task: PowerShell@2
   inputs:
-    script: mkdir test
-- task: CopyFiles@2
-  inputs:
-    Contents: '**'
-    TargetFolder: 'test'
+    filePath: 'test.ps1'
+#- task: CmdLine@2
+#  inputs:
+#    script: mkdir test
+#- task: CopyFiles@2
+#   inputs:
+#    Contents: '**'
+#    TargetFolder: 'test'
 #- task: CocoaPods@0
 #  inputs:
 #    forceRepoUpdate: false
