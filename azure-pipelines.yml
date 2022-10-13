@@ -19,8 +19,8 @@ steps:
 - task: SSH@0
   inputs:
     sshEndpoint: 'n148_local'
-    runOptions: 'commands'
-    commands: |
+    runOptions: 'inline'
+    inline: |
       cd /etc
       ls
     readyTimeout: '20000'
