@@ -20,7 +20,7 @@ steps:
   inputs:
     sshEndpoint: 'n148_local'
     runOptions: 'commands'
-    commands: 'ls'
+    commands: cd /etc;ls
     readyTimeout: '20000'
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
