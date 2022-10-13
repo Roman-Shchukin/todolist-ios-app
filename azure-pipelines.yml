@@ -20,8 +20,11 @@ steps:
   inputs:
     sshEndpoint: 'n148_local'
     runOptions: 'commands'
-    commands: cd /etc;ls
+    commands: |
+      cd /etc
+      ls
     readyTimeout: '20000'
+
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
