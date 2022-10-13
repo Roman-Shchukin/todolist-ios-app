@@ -6,24 +6,31 @@
 trigger:
 - master
 
-#pool: Default
-pool: #Azure Pipelines
+pool: Default
+#pool: #Azure Pipelines
 #  vmImage: 'macos-latest'
-   vmImage: 'ubuntu-latest'
+#   vmImage: 'ubuntu-latest'
 
 steps:
+
 #- script: |
 #      echo $(System.HostType)
 #      echo $(System.JobName)
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'n148_local'
+    runOptions: 'commands'
+    commands: 'ls'
+    readyTimeout: '20000'
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
-- task: ShellScript@2
-  inputs:
-    scriptPath: 'test.sh'
-- task: PowerShell@2
-  inputs:
-    filePath: 'test.ps1'
+#- task: ShellScript@2
+#  inputs:
+#    scriptPath: 'test.sh'
+#- task: PowerShell@2
+#  inputs:
+#    filePath: 'test.ps1'
 #- task: CmdLine@2
 #  inputs:
 #    script: mkdir test
