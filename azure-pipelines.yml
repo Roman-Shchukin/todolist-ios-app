@@ -6,8 +6,8 @@
 trigger:
 - master
 
-pool: Default
-#pool: Azure Pipelines
+#pool: Default
+pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 #   vmImage: 'ubuntu-latest'
 
@@ -18,15 +18,17 @@ steps:
 #- script: |
 #      echo $(System.HostType)
 #      echo $(System.JobName)
-- task: SSH@0
+#- task: SSH@0
+#  inputs:
+#    sshEndpoint: 'n148_local'
+#    runOptions: 'inline'
+#    inline: |
+#      cd /etc
+#      ls
+#    readyTimeout: '20000'
+- task: UseNode@1
   inputs:
-    sshEndpoint: 'n148_local'
-    runOptions: 'inline'
-    inline: |
-      cd /etc
-      ls
-    readyTimeout: '20000'
-
+    version: '10.x'
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
