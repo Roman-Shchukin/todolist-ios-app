@@ -12,20 +12,20 @@ pool: Azure Pipelines
 #   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '6.x' 
+#- task: NodeTool@0
+#  inputs:
+#    versionSpec: '6.x' 
 #- script: |
 #      echo $(System.HostType)
 #      echo $(System.JobName)
-#- task: SSH@0
-#  inputs:
-#    sshEndpoint: 'n148_local'
-#    runOptions: 'inline'
-#    inline: |
-#      cd /etc
-#      ls
-#    readyTimeout: '20000'
+- task: SSH@0
+  inputs:
+    sshEndpoint: 'n148_local'
+    runOptions: 'inline'
+    inline: |
+      cd /etc
+      ls
+    readyTimeout: '20000'
 
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
