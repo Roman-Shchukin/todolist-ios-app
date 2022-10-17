@@ -26,10 +26,10 @@ steps:
 #      cd /etc
 #      ls
 #    readyTimeout: '20000'
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    architecture: x64
+#- task: UsePythonVersion@0
+#  inputs:
+#    versionSpec: '3.x'
+#    architecture: x64
 - task: PythonScript@0
   inputs:
    scriptSource: inline
