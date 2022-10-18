@@ -6,15 +6,15 @@
 trigger:
 - master
 
-pool: Default
-#pool: Azure Pipelines
+#pool: Default
+pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 #   vmImage: 'ubuntu-latest'
 
 steps:
-#- task: NodeTool@0
-#  inputs:
-#    versionSpec: '6.x' 
+- task: NodeTool@0
+  inputs:
+    versionSpec: '6.x' 
 #- script: |
 #      echo $(System.HostType)
 #      echo $(System.JobName)
@@ -30,10 +30,10 @@ steps:
 #  inputs:
 #    versionSpec: '3.x'
 #    architecture: x64
-- task: PythonScript@0
-  inputs:
-   scriptSource: inline
-   script: print("Hello", "how are you?")
+#- task: PythonScript@0
+#  inputs:
+#   scriptSource: inline
+#   script: print("Hello", "how are you?")
 #      echo $(System.ServerType)
 #      echo $(Agent.CloudId)
 #      echo "##vso[task.getvariable variable=Build_BuildId;]"
