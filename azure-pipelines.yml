@@ -13,6 +13,8 @@ jobs:
     steps:
     - script: |
           gem install cocoapods
+    - script: |
+          pod init
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
@@ -23,6 +25,8 @@ jobs:
     steps:
     - script: |
           gem install cocoapods
+    - script: |
+          pod init
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
@@ -33,6 +37,8 @@ jobs:
     steps:
     - script: |
           gem install cocoapods
+    - script: |
+          pod init
     - task: CocoaPods@0
       inputs:
         forceRepoUpdate: false
