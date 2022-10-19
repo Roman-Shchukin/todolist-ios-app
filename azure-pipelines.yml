@@ -3,15 +3,51 @@
 # Add steps that install certificates, test, sign, and distribute an app, save build artifacts, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/xcode
 
-trigger:
-- master
+
+
+
+jobs:
+  - job: macos_test
+    pool:
+        vmImage: macos-latest
+    steps:
+    - script: |
+          gem install cocoapods
+    - task: CocoaPods@0
+      inputs:
+        forceRepoUpdate: false
+
+  - job: windows_test
+    pool:
+        vmImage: windows-latest
+    steps:
+    - script: |
+          gem install cocoapods
+    - task: CocoaPods@0
+      inputs:
+        forceRepoUpdate: false
+
+  - job: ubuntu_test
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - script: |
+          gem install cocoapods
+    - task: CocoaPods@0
+      inputs:
+        forceRepoUpdate: false
+
+
+
+#trigger:
+#- master
 
 #pool: Default
-pool: Azure Pipelines
+#pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 #   vmImage: 'ubuntu-latest'
 
-steps:
+#teps:
 #- task: NodeTool@0
 #  inputs:
 #    versionSpec: '6.x' 
@@ -50,9 +86,9 @@ steps:
 #   inputs:
 #    Contents: '**'
 #    TargetFolder: 'test'
-- task: CocoaPods@0
-  inputs:
-    forceRepoUpdate: false
+#- task: CocoaPods@0
+#  inputs:
+#    forceRepoUpdate: false
 #- task: Xcode@5
 #  inputs:
 #    actions: 'build'
