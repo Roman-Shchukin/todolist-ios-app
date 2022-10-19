@@ -12,9 +12,9 @@ pool: Azure Pipelines
 #   vmImage: 'ubuntu-latest'
 
 steps:
-- task: NodeTool@0
-  inputs:
-    versionSpec: '6.x' 
+#- task: NodeTool@0
+#  inputs:
+#    versionSpec: '6.x' 
 #- script: |
 #      echo $(System.HostType)
 #      echo $(System.JobName)
@@ -50,9 +50,9 @@ steps:
 #   inputs:
 #    Contents: '**'
 #    TargetFolder: 'test'
-#- task: CocoaPods@0
-#  inputs:
-#    forceRepoUpdate: false
+- task: CocoaPods@0
+  inputs:
+    forceRepoUpdate: false
 #- task: Xcode@5
 #  inputs:
 #    actions: 'build'
