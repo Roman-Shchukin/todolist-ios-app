@@ -12,6 +12,8 @@ jobs:
       vmImage: ubuntu-latest
     steps:
     - script: |
+          gem install cocoapods
+    - script: |
           pod init
     - task: CocoaPods@0
       inputs:
