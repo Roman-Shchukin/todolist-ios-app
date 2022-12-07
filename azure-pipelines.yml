@@ -55,9 +55,9 @@ steps:
       echo $(System.ServerType)
       echo $(Agent.CloudId)
       echo "##vso[task.getvariable variable=Build_BuildId;]"
-- task: ShellScript@2
-  inputs:
-    scriptPath: 'test.sh'
+#- task: ShellScript@2
+#  inputs:
+#    scriptPath: 'test.sh'
 - task: PowerShell@2
   inputs:
     filePath: 'test.ps1'
