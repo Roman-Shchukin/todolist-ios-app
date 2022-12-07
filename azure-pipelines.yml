@@ -6,36 +6,36 @@
 
 
 
-jobs:
-  - job: ubuntu_test
-    pool:
-      vmImage: ubuntu-latest
-    steps:
-    - script: |
-          sudo gem install cocoapods
-    - script: |
-          pod init
-    - task: CocoaPods@0
-      inputs:
-        forceRepoUpdate: false
+#jobs:
+#  - job: ubuntu_test
+#    pool:
+#      vmImage: ubuntu-latest
+#    steps:
+#    - script: |
+#          sudo gem install cocoapods
+#    - script: |
+#          pod init
+#    - task: CocoaPods@0
+#      inputs:
+#        forceRepoUpdate: false
 
 
 
-#trigger:
-#- master
+trigger:
+- master
 
-#pool: Default
+pool: Default
 #pool: Azure Pipelines
 #  vmImage: 'macos-latest'
 #   vmImage: 'ubuntu-latest'
 
-#teps:
-#- task: NodeTool@0
-#  inputs:
-#    versionSpec: '6.x' 
-#- script: |
-#      echo $(System.HostType)
-#      echo $(System.JobName)
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '6.x' 
+- script: |
+      echo $(System.HostType)
+      echo $(System.JobName)
 #- task: SSH@0
 #  inputs:
 #    sshEndpoint: 'n148_local'
@@ -44,23 +44,23 @@ jobs:
 #      cd /etc
 #      ls
 #    readyTimeout: '20000'
-#- task: UsePythonVersion@0
-#  inputs:
-#    versionSpec: '3.x'
-#    architecture: x64
-#- task: PythonScript@0
-#  inputs:
-#   scriptSource: inline
-#   script: print("Hello", "how are you?")
-#      echo $(System.ServerType)
-#      echo $(Agent.CloudId)
-#      echo "##vso[task.getvariable variable=Build_BuildId;]"
-#- task: ShellScript@2
-#  inputs:
-#    scriptPath: 'test.sh'
-#- task: PowerShell@2
-#  inputs:
-#    filePath: 'test.ps1'
+- task: UsePythonVersion@0
+  inputs:
+    versionSpec: '3.x'
+    architecture: x64
+- task: PythonScript@0
+  inputs:
+   scriptSource: inline
+   script: print("Hello", "how are you?")
+      echo $(System.ServerType)
+      echo $(Agent.CloudId)
+      echo "##vso[task.getvariable variable=Build_BuildId;]"
+- task: ShellScript@2
+  inputs:
+    scriptPath: 'test.sh'
+- task: PowerShell@2
+  inputs:
+    filePath: 'test.ps1'
 #- task: CmdLine@2
 #  inputs:
 #    script: mkdir test
@@ -68,14 +68,14 @@ jobs:
 #   inputs:
 #    Contents: '**'
 #    TargetFolder: 'test'
-#- task: CocoaPods@0
-#  inputs:
-#    forceRepoUpdate: false
-#- task: Xcode@5
-#  inputs:
-#    actions: 'build'
-#    scheme: ''
-#    sdk: 'iphoneos'
-#    configuration: 'Release'
-#    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
-#    xcodeVersion: 'default' # Options: 8, 9, 10, 11, 12, default, specifyPath
+- task: CocoaPods@0
+  inputs:
+    forceRepoUpdate: false
+- task: Xcode@5
+  inputs:
+    actions: 'build'
+    scheme: ''
+    sdk: 'iphoneos'
+    configuration: 'Release'
+    xcWorkspacePath: '**/*.xcodeproj/project.xcworkspace'
+    xcodeVersion: 'default' # Options: 8, 9, 10, 11, 12, default, specifyPath
