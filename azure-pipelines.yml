@@ -48,13 +48,13 @@ steps:
   inputs:
     versionSpec: '3.x'
     architecture: x64
-- task: PythonScript@0
-  inputs:
-   scriptSource: inline
-   script: print("Hello", "how are you?")
-      echo $(System.ServerType)
-      echo $(Agent.CloudId)
-      echo "##vso[task.getvariable variable=Build_BuildId;]"
+#- task: PythonScript@0
+#  inputs:
+#   scriptSource: inline
+#   script: print("Hello", "how are you?")
+#      echo $(System.ServerType)
+#      echo $(Agent.CloudId)
+#      echo "##vso[task.getvariable variable=Build_BuildId;]"
 #- task: ShellScript@2
 #  inputs:
 #    scriptPath: 'test.sh'
