@@ -44,7 +44,7 @@ steps:
 #      cd /etc
 #      ls
 #    readyTimeout: '20000'
-- task: UsePythonVersion@0
+- task: UsePythonVersion@0.213.0
   inputs:
     versionSpec: '3.x'
     architecture: x64
