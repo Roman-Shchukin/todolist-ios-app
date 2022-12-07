@@ -58,7 +58,7 @@ steps:
 #- task: ShellScript@2
 #  inputs:
 #    scriptPath: 'test.sh'
-- task: PowerShell@2.213.0
+- task: PowerShell@2
   inputs:
     filePath: 'test.ps1'
 #- task: CmdLine@2
